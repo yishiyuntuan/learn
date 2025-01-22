@@ -1,0 +1,28 @@
+[package]
+name = "springboot-web"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["http2"]
+http2 = ["axum/http2"]
+multipart = ["axum/multipart"]
+ws = ["axum/ws"]
+
+
+[dependencies]
+springboot = { path = "../springboot" }
+springboot-macros = { path = "../springboot-macros" }
+axum = { workspace = true }
+serde = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true, features = ["log"] }
+tokio = { workspace = true, features = ["full"] }
+tower = { workspace = true, features = ["full"] }
+tower-http = { workspace = true, features = ["full"] }
+byte-unit = { workspace = true, features = ["serde"] }
+schemars = { workspace = true }
+inventory = { workspace = true }
+
+local-ip-address = { workspace = true }

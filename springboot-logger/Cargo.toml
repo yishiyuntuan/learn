@@ -1,0 +1,21 @@
+[package]
+name = "springboot-logger"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nu-ansi-term = { workspace = true }
+
+#tracing = { workspace = true, features = ["log"] }
+tracing-appender = { workspace = true }
+tracing-subscriber = { workspace = true, features = [
+    "json",
+    "env-filter",
+    "tracing-log",
+    "chrono",
+] }
+log = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+springboot = { path = "../springboot" }
+
